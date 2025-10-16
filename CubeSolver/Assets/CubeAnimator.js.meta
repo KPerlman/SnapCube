@@ -1,0 +1,54 @@
+- !<AssetImportMetadata/6cebb2f6-fd89-4d46-9254-3a6cbc622684>
+  ImportedAssetIds:
+    JavaScriptAsset: !<reference> dee6e1c0-7462-4bf8-8f13-ab6592fa745b
+  ImporterName: JavaScriptAssetImporter
+  PrimaryAsset: !<reference> dee6e1c0-7462-4bf8-8f13-ab6592fa745b
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    JavaScriptAsset: !<own> 1d1e83bc-73a2-4490-8b36-2ebfa57fb6c7
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<ScriptAssetData/1d1e83bc-73a2-4490-8b36-2ebfa57fb6c7>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 718c40f4-8939-432f-9952-0d800fe1aab5
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    cubeRoot: false
+    holdAfterMove: false
+    moveString: false
+    runOnTap: false
+    runOnTurnOn: false
+    spacing: false
+    turnDuration: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - cubeRoot: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      spacing: !<float> 10.000000
+      turnDuration: 0.180000
+      holdAfterMove: 0.020000
+      moveString: "R' U F2 D L' B"
+      runOnTurnOn: true
+      runOnTap: false
+  ScriptTypes:
+    -
+      {}
