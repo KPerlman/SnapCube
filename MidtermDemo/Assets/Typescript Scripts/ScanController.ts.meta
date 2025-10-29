@@ -1,0 +1,47 @@
+- !<AssetImportMetadata/a20e6d16-1ab4-431e-83f9-872b033347d1>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 1b4f9d35-57ef-4bb2-b4dd-154d40b879c5
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 1b4f9d35-57ef-4bb2-b4dd-154d40b879c5
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 1750af52-c53e-4bb7-9e45-d215f4312e2d
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/1750af52-c53e-4bb7-9e45-d215f4312e2d>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 578e8ad1-4a0d-4863-a726-fb07206d5270
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    solverUrl: false
+    ui: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - ui: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
+      solverUrl: ""
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input AssignableType ui
+    - // @input string solverUrl

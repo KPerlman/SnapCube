@@ -1,0 +1,56 @@
+- !<AssetImportMetadata/3877ed04-bfc8-4c06-b357-2d020251c2e4>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> f30cd6ef-f9f1-4952-8a03-befd6b15303f
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> f30cd6ef-f9f1-4952-8a03-befd6b15303f
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 1b3fe1a5-2744-41c6-bdc1-20a03b513004
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/1b3fe1a5-2744-41c6-bdc1-20a03b513004>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: d52853ee-a5f9-4759-ade6-448c9c2d0dee
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    cameraObject: false
+    instructionPanel: false
+    padBillboardTextObj: false
+    scanPanel: false
+    scanStepTextObj: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - instructionPanel: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      scanPanel: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      scanStepTextObj: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      padBillboardTextObj: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      cameraObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input SceneObject instructionPanel
+    - // @input SceneObject scanPanel
+    - // @input SceneObject scanStepTextObj
+    - // @input SceneObject padBillboardTextObj
+    - // @input SceneObject cameraObject

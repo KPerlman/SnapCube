@@ -1,0 +1,59 @@
+- !<AssetImportMetadata/63bd1c1c-3b69-4f25-9b8f-dd14e4befe78>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> a4a28694-a8b3-488e-944a-4a05a2c33554
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> a4a28694-a8b3-488e-944a-4a05a2c33554
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 7a47aede-beea-4ed4-a44f-96f063d33434
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/7a47aede-beea-4ed4-a44f-96f063d33434>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: b26d6dd3-212a-4446-b38a-936dcb92985a
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    cameraObject: false
+    filterEnabled: false
+    padObject: false
+    scan: false
+    surfaceOffset: false
+    ui: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - padObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      cameraObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      filterEnabled: false
+      surfaceOffset: 0.005000
+      ui: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
+      scan: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input SceneObject padObject
+    - // @input SceneObject cameraObject
+    - // @input bool filterEnabled
+    - // @input float surfaceOffset = 0.005
+    - // @input AssignableType ui
+    - // @input AssignableType_1 scan
