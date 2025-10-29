@@ -26,7 +26,12 @@
   ExportUid: 00000000-0000-0000-0000-000000000000
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
-    solverUrl: false
+    captureCamera: false
+    captureRT: false
+    captureTexOverride: false
+    internetModule: false
+    lambdaUrl: false
+    padObject: false
     ui: false
   ScriptTypesHidden:
     {}
@@ -38,10 +43,20 @@
     []
   DefaultScriptInputs:
     - ui: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
-      solverUrl: ""
+      padObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      captureCamera: !<reference.Camera> 00000000-0000-0000-0000-000000000000
+      captureRT: !<reference.RenderTarget> 00000000-0000-0000-0000-000000000000
+      captureTexOverride: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+      internetModule: !<reference.InternetModule> 00000000-0000-0000-0000-000000000000
+      lambdaUrl: ""
   ScriptTypes:
     -
       {}
   InputLines:
     - // @input AssignableType ui
-    - // @input string solverUrl
+    - // @input SceneObject padObject
+    - // @input Component.Camera captureCamera
+    - // @input Asset.RenderTarget captureRT
+    - // @input Asset.Texture captureTexOverride
+    - // @input Asset.InternetModule internetModule
+    - // @input string lambdaUrl

@@ -1,29 +1,29 @@
 // UIController.ts
-// Owns UI text and floating label above pad
+// Shows messaging and panels
 
 @component
 export class UIController extends BaseScriptComponent {
-  // During placement
+
+  // Panel shown during placement
   @input
   instructionPanel: SceneObject;
 
-  // During scanning
+  // Panel shown during scanning
   @input
   scanPanel: SceneObject;
 
-  // The Text component under scanPanel
+  // SceneObject that holds Component.Text
   @input
   scanStepTextObj: SceneObject;
 
-  // Floating text above pad
+  // Floating label above pad
   @input
   padBillboardTextObj: SceneObject;
 
-  // Main AR camera object for billboarding world label
+  // Main AR camera object for billboard pad label
   @input
   cameraObject: SceneObject;
 
-  // Faces to be scanned
   private faceNames: string[] = [
     "WHITE face up",
     "GREEN face up",
@@ -34,9 +34,10 @@ export class UIController extends BaseScriptComponent {
   ];
 
   onAwake() {
+    // Start in placement mode UI
     this.showPlacementUI();
 
-    // Keep billboard facing camera
+    // Keep billboard text facing camera
     this.createEvent("UpdateEvent").bind(this.onUpdate.bind(this));
   }
 
@@ -46,12 +47,20 @@ export class UIController extends BaseScriptComponent {
 
   // Rotate pad label to face camera
   private billboardPadLabel() {
-    if (!this.padBillboardTextObj || !this.cameraObject) {
+    if (
+      !this.padBillboardTextObj ||
+      !this.cameraObject ||
+      !this.padBillboardTextObj.enabled
+    ) {
       return;
     }
 
     const labelXf = this.padBillboardTextObj.getTransform();
     const camXf = this.cameraObject.getTransform();
+
+    if (!labelXf || !camXf) {
+      return;
+    }
 
     const camPos = camXf.getWorldPosition();
     const labelPos = labelXf.getWorldPosition();
@@ -62,31 +71,42 @@ export class UIController extends BaseScriptComponent {
   }
 
   // Show placement instructions and hide scan UI
-  showPlacementUI() {
+  public showPlacementUI() {
     if (this.instructionPanel) {
       this.instructionPanel.enabled = true;
     }
     if (this.scanPanel) {
       this.scanPanel.enabled = false;
     }
+
+    if (this.padBillboardTextObj) {
+      this.padBillboardTextObj.enabled = true;
+    }
   }
 
-  // Show scan panel, hide placement panel, set initial step text
-  showScanUI(stepIndex: number, totalSteps: number) {
+  // Show scan panel, hide placement panel, update initial step text
+  public showScanUI(stepIndex: number, totalSteps: number) {
     if (this.instructionPanel) {
       this.instructionPanel.enabled = false;
     }
     if (this.scanPanel) {
       this.scanPanel.enabled = true;
     }
+
+    // When scanning starts hide floating pad label
+    if (this.padBillboardTextObj) {
+      this.padBillboardTextObj.enabled = false;
+    }
+
     this.updateScanStep(stepIndex, totalSteps);
   }
 
-  // Update "Step x/6" text
-  updateScanStep(stepIndex: number, totalSteps: number) {
+  // Update Step x/6 instructions while scanning
+  public updateScanStep(stepIndex: number, totalSteps: number) {
     if (!this.scanStepTextObj) {
       return;
     }
+
     const textComp = this.scanStepTextObj.getComponent(
       "Component.Text"
     ) as any;
@@ -107,31 +127,35 @@ export class UIController extends BaseScriptComponent {
       " on the pad\nand pinch to capture";
   }
 
-  // State that scanning is complete, solving in progress
-  showScanComplete() {
+  // Tells user scanning is finished and solving is in progress
+  public showDoneUI() {
     if (!this.scanStepTextObj) {
       return;
     }
+
     const textComp = this.scanStepTextObj.getComponent(
       "Component.Text"
     ) as any;
     if (!textComp) {
       return;
     }
+
     textComp.text = "All faces captured.\nSolving cube...";
   }
 
-  // Show solution from AWS
-  showSolution(solutionMoves: string) {
+  // Show move sequence
+  public showSolution(solutionMoves: string) {
     if (!this.scanStepTextObj) {
       return;
     }
+
     const textComp = this.scanStepTextObj.getComponent(
       "Component.Text"
     ) as any;
     if (!textComp) {
       return;
     }
+
     textComp.text = "Solution:\n" + solutionMoves;
   }
 }

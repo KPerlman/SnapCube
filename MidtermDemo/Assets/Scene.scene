@@ -7,7 +7,6 @@
     - !<own> 59a7f3b1-28d5-40ce-bc1a-f06858e04e93
     - !<own> 9b4ee9a5-0c10-4502-a12a-9c56505f764a
     - !<own> a1aeee4a-84a1-4baa-bbd4-4452437ef933
-    - !<own> c51cf211-575e-499e-8b8a-d20968b5a0f0
     - !<own> 2865a671-7d82-4d01-8b5f-11b014c9cbca
     - !<own> a68af1c6-a36d-4128-9b76-d3b550c977a9
     - !<own> 5e41e62c-c586-4907-9eec-e15beae3379c
@@ -234,22 +233,6 @@
     []
   Components:
     []
-- !<ScriptComponent/055188a4-0be1-43ad-b6ee-e54fa1ee2afb>
-  PrefabRemaps:
-    []
-  Name: CaptureConfig
-  Enabled: true
-  ScriptAsset: !<reference> dc60366d-b809-479b-a285-e65d71dfed17
-  ScriptInputsDefault:
-    {}
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      captureRT: !<reference.RenderTarget> 1172a8ed-5298-4d99-a546-1b8633b85bc5
-  ScriptTypes:
-    "":
-      {}
 - !<ScreenRegionComponent/0617602d-360c-4ac1-8bfb-98aeab1fc52b>
   PrefabRemaps:
     []
@@ -310,13 +293,18 @@
   Enabled: true
   ScriptAsset: !<reference> 1b4f9d35-57ef-4bb2-b4dd-154d40b879c5
   ScriptInputsDefault:
-    {}
+    captureTexOverride: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
     "":
       ui: !<MappingBased.AssignableType> 62230b42-8e24-48bc-ae4e-44b3a5ce3f77
-      solverUrl: "https://3vs5slmbgc7jhlhwpn7xzrrina0whqsg.lambda-url.us-east-1.on.aws/"
+      padObject: !<reference.SceneObject> 59a7f3b1-28d5-40ce-bc1a-f06858e04e93
+      captureCamera: !<reference.Camera> e251ee3e-f1ed-4d2b-890a-43c6c761054e
+      captureRT: !<reference.RenderTarget> 1172a8ed-5298-4d99-a546-1b8633b85bc5
+      captureTexOverride: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+      internetModule: !<reference.InternetModule> 4b0abd33-5921-4eca-9373-457594831657
+      lambdaUrl: "https://3vs5slmbgc7jhlhwpn7xzrrina0whqsg.lambda-url.us-east-1.on.aws/"
   ScriptTypes:
     "":
       {}
@@ -2658,21 +2646,6 @@
     - !<own> 5b64e172-c3e7-43c4-90c1-dc2bca24096a
   Components:
     - !<own> 6f0665a5-05e0-4415-b300-7f80b708d93f
-- !<SceneObject/c51cf211-575e-499e-8b8a-d20968b5a0f0>
-  PrefabRemaps:
-    []
-  Name: Config
-  Enabled: true
-  Layers: 1
-  LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    HasSegmentScaleCompensation: false
-  Children:
-    []
-  Components:
-    - !<own> 055188a4-0be1-43ad-b6ee-e54fa1ee2afb
 - !<ScriptComponent/c791a5a2-e38f-4249-878c-b6e019420446>
   PrefabRemaps:
     []
@@ -3138,9 +3111,9 @@
   Far: 1000.000000
   Fov: 63.541019
   ClearColor: !<CameraClearColor>
-    Mode: Color
+    Mode: Texture
     Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
-    InputTexture: !<reference> 00000000-0000-0000-0000-000000000000
+    InputTexture: !<reference> 996c6f4e-b2ad-4117-9e3e-3db82e6e97f5
   ClearDepth: !<CameraClearDepth>
     Mode: Value
     Value: 1.000000
